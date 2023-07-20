@@ -10,19 +10,8 @@ import {
 export class LoginDTO {
   @ApiProperty()
   @IsNotEmpty()
-  @IsString()
-  name: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
   @IsPhoneNumber('BD')
   phone: string;
-
-  @ApiProperty()
-  @IsNotEmpty()
-  @IsString()
-  @IsEmail()
-  email: string;
 
   @ApiProperty()
   @IsNotEmpty()
@@ -31,4 +20,15 @@ export class LoginDTO {
   password: string;
 }
 
-export class SignUpDTO extends LoginDTO {}
+export class SignUpDTO extends LoginDTO {
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  name: string;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  @IsString()
+  @IsEmail()
+  email: string;
+}
